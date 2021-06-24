@@ -118,7 +118,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
     describe '#populate_content_md5' do
       context 'when getting' do
         it "doesn't populate content-md5" do
-          request.method = :get
+          request.http_method = :get
           driven_request.populate_content_md5
           expect(request.headers['Content-MD5']).to be_nil
         end
@@ -126,7 +126,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
       context 'when posting' do
         it 'populates content-md5' do
-          request.method = :post
+          request.http_method = :post
           driven_request.populate_content_md5
           expect(request.headers['Content-MD5']).to eq('kZXQvrKoieG+Be1rsZVINw==')
         end
@@ -139,7 +139,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
       context 'when putting' do
         it 'populates content-md5' do
-          request.method = :put
+          request.http_method = :put
           driven_request.populate_content_md5
           expect(request.headers['Content-MD5']).to eq('kZXQvrKoieG+Be1rsZVINw==')
         end
@@ -152,7 +152,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
       context 'when deleting' do
         it "doesn't populate content-md5" do
-          request.method = :delete
+          request.http_method = :delete
           driven_request.populate_content_md5
           expect(request.headers['Content-MD5']).to be_nil
         end
@@ -186,7 +186,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
   describe 'md5_mismatch?' do
     context 'when getting' do
       before do
-        request.method = :get
+        request.http_method = :get
       end
 
       it 'is false' do
@@ -196,7 +196,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
     context 'when posting' do
       before do
-        request.method = :post
+        request.http_method = :post
       end
 
       context 'when calculated matches sent' do
@@ -222,7 +222,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
     context 'when putting' do
       before do
-        request.method = :put
+        request.http_method = :put
       end
 
       context 'when calculated matches sent' do
@@ -248,7 +248,7 @@ describe ApiAuth::RequestDrivers::FaradayRequest do
 
     context 'when deleting' do
       before do
-        request.method = :delete
+        request.http_method = :delete
       end
 
       it 'is false' do
