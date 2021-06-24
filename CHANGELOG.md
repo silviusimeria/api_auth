@@ -1,3 +1,12 @@
+# 2.4.2 (2021-06-24) 
+- Add support for Ruby 3.0 (#194 fwininger)
+- Add support for Rails 6.1 (#194 fwininger)
+- Drop support for Ruby 2.4 (#193 fwininger)
+- Drop support for Rails 5.0 (#194 fwininger)
+- Drop support for Rails 5.1 (#194 fwininger)
+- Fix Faraday warning: `WARNING: Faraday::Request#method is deprecated` (#191 fwininger)
+- !!! DOES NOT INCLUDE THE FEATURE WITH THE BREAKING CHANGES FROM the official 2.5.0 #188
+
 # 2.4.1 (2020-06-23)
 - Fix inadvertant ActiveSupport dependecy (#189 taylorthurlow)
 
